@@ -4,6 +4,7 @@ import ChocoLover from '../ChocoLover/ChocoLover';
 import ChocoInside from '../Chocolnside.jsx/ChocoInside';
 import ChocolateGance from '../ChocolateGance/ChocolateGance';
 import Banner from '../Banner/Banner';
+import Products from '../../UserInterface/Products/Products';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <ChocolateGance></ChocolateGance>
             <ChocoLover></ChocoLover>
             <ChocoInside></ChocoInside>
+            <Products></Products>
         </div>
     );
 };

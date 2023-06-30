@@ -1,46 +1,17 @@
-import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-import { useQuery } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
+import Card from "../../../components/Card/Card";
 
 const Products = () => {
-    const { data: products , isLoading} = useQuery({
-        queryKey: ['products'],
-        queryFn: async () =>{
-            const res = await fetch('http://localhost:5000/products')
-            return res.json()
-        }
-    })
-    console.log(products);
+    const [products,setProducts] = useState([]);
+    useEffect(() =>{
+      fetch('http://localhost:5000/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+    },[])
   return (
-    <div className=" grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center my-10">
         {
-            products.map((product,index) => <Card key={index} className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
-              <img
-                src={product.img}
-                alt="img-blur-shadow"
-                layout="fill"
-              />
-            </CardHeader>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                {product.productName}
-              </Typography>
-              <Typography>
-                {product.productDetails}
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0">
-              <Button>Read More</Button>
-            </CardFooter>
-          </Card> )
+            products.map((product,index) => <Card key={index} img={product.img} title={product.productName}></Card> )
         }
     </div>
   );

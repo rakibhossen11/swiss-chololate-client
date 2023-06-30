@@ -8,7 +8,12 @@ module.exports = withMT({
     "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        hambra: ['Hammersmith One', 'sans-serif'],
+        signika: ['Signika', 'sans-serif'],
+      } 
+    },
   },
   plugins: [],
 });
