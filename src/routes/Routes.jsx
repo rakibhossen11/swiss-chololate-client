@@ -3,6 +3,9 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Register from "../authentication/Register";
 import SignIn from "../authentication/SignIn";
+import Dashboard from "../layout/Dashboard";
+import CreateProduct from "../pages/SellerInterface/CreateProduct/CreateProduct";
+import Products from "../pages/UserInterface/Products/Products";
 
 const routes = createBrowserRouter([
     {
@@ -21,7 +24,21 @@ const routes = createBrowserRouter([
            {
             path: 'signin',
             element: <SignIn></SignIn>
+           },
+           {
+            path: 'products',
+            element: <Products></Products>
            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'createProduct',
+                element: <CreateProduct></CreateProduct>
+            }
         ]
     }
 

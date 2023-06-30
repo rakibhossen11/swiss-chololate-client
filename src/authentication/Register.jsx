@@ -27,7 +27,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         Swal.fire({
-            title: 'User Create Successfully.',
+            title: 'User Create Successful.',
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
@@ -78,12 +78,7 @@ const Register = () => {
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             Already have an account?{" "}
-            <a
-              href="#"
-              className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-            >
-              Sign In
-            </a>
+            <Link to='/signin' className="font-medium text-blue-500 transition-colors hover:text-blue-700">Sign In</Link>
           </Typography>
         </form>
       </Card>
