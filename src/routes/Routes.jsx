@@ -15,7 +15,7 @@ const routes = createBrowserRouter([
            {
             path: '/',
             element: <Home></Home>,
-            loader: ({params}) => fetch('http://localhost:5000/trending')
+            // loader: ({params}) => fetch('http://localhost:5000/trending')
            },
            {
             path: 'register',
